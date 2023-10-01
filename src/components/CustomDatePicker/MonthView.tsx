@@ -53,9 +53,6 @@ function MonthView({ value, onChange, className, fromDate }: { value?: Date, onC
 
         </div>
 
-        {/* <div>
-            {getDays(year, month)} - {getStartWeekDay(year, month)}
-        </div> */}
         <div className="grid grid-cols-7 gap-4 m-4">
             {allDays.map(day => <DayView
                 key={day.index}

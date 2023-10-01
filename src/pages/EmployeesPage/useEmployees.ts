@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Employee from "../models/employee";
+import Employee from "../../models/employee";
 import { useIndexedDB } from "react-indexed-db-hook";
-import { STORE_NAME } from "../configs/db_config";
+import { STORE_NAME } from "../../configs/db_config";
 
 export default function useEmployees() {
     

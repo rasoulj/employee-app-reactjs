@@ -9,7 +9,7 @@ import EmployeePage from './pages/EmployeePage/EmployeePage';
 initDB(DBConfig);
 
 function App() {
-  return <div className=' md:w-1/2 w-full'>
+  return <div className=' md:w-1/2 w-full md:border md:border-1'>
     <Routes>
       <Route path='/' element={<EmployeesPage />} />
       <Route path='/employee/:id' element={<EmployeePage />} />

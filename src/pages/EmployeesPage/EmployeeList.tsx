@@ -1,5 +1,5 @@
 import NoData from '../../components/NoData';
-import useEmployees from '../../hooks/useEmployees'
+import useEmployees from './useEmployees'
 import EmployeeView from './EmployeeView';
 import Employee from "../../models/employee";
 import "../../components/swipe-list/swipe-list.css";
