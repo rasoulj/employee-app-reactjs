@@ -12,6 +12,8 @@ function ItemDragable({ children, action }) {
     const itemRef = useRef();
     const actionRef = useRef();
 
+    console.debug(isActionOpen);
+
     const handleStart = () => {
         setIsDrag(true)
     }
