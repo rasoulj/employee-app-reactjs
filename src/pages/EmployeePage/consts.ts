@@ -1,0 +1,13 @@
+export const classNames = {
+    dateBox: "flex flex-1 h-10 rounded border border-neutral-200 justify-start",
+    input: "bg-gray-50 h-10 rounded border border-neutral-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+    icon: "h-6 w-6 self-center ml-3 mr-3",
+};
+
+export const RoleOptions = [
+    "Select role",
+    "Product Designer",
+    "Flutter Developer",
+    "QA Tester",
+    "Product Owner",
+];

@@ -1,0 +1,23 @@
+.swipe-list {
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+.box-action {
+  position: absolute;
+  right: 0;
+}
+
+.item-group {
+  overflow: hidden;
+  background: #f00;
+}
+
+.item {
+    background: #fff;
+    /* padding: 10px 20px; */
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+  z-index: 2;
+  transition: all 0.1s linear;
+}
