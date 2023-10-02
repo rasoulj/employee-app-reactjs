@@ -4,6 +4,7 @@ import EmployeeView from './EmployeeView';
 import Employee from "../../models/employee";
 import "../../components/swipe-list/swipe-list.css";
 import { useState } from 'react';
+
 function SubList({ list, title, onDelete }: { list: Employee[], title: string, onDelete: (emp: Employee) => void }) {
     if (list.length === 0) return undefined;
     return (

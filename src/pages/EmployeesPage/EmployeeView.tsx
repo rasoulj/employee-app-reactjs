@@ -11,17 +11,15 @@ interface EmployeeViewProps {
 }
 
 function InnerEmployeeView({ employee }: EmployeeViewProps) {
-    const { fullName, dateFrom, dateTo, role, id } = employee;
+    const { fullName, dateFrom, dateTo, role } = employee;
     const dateString = !dateTo
         ? `From ${formatDateMain(dateFrom)}`
         : `${formatDateMain(dateFrom)} - ${formatDateMain(dateTo)}`;
 
     return (
-        <Link to={`/employee/${id}`}>
+        <div className="flex flex-1 w-100 justify-between">
             <div className="h-24 p-4 bg-white flex-col justify-start items-start gap-1.5 inline-flex">
-                <div className="text-zinc-800 text-base font-medium leading-tight">
-                    {fullName}
-                </div>
+                {fullName}
                 <div className="text-neutral-400 text-sm font-normal leading-tight">
                     {role}
                 </div>
@@ -31,7 +29,11 @@ function InnerEmployeeView({ employee }: EmployeeViewProps) {
                     </div>
                 </div>
             </div>
-        </Link>
+            <Link to={`/employee/${employee.id}`} className="pt-8 pr-4 text-neutral-400">
+                <span className="">Edit</span>
+            </Link>
+
+        </div>
     );
 }
 
