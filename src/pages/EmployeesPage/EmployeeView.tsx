@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Employee from "../../models/employee";
 import { formatDateMain } from "../../utils/date";
 
@@ -15,6 +15,8 @@ function InnerEmployeeView({ employee }: EmployeeViewProps) {
     const dateString = !dateTo
         ? `From ${formatDateMain(dateFrom)}`
         : `${formatDateMain(dateFrom)} - ${formatDateMain(dateTo)}`;
+    
+    
 
     return (
         <div className="flex flex-1 w-100 justify-between">
@@ -29,9 +31,7 @@ function InnerEmployeeView({ employee }: EmployeeViewProps) {
                     </div>
                 </div>
             </div>
-            <Link to={`/employee/${employee.id}`} className="pt-8 pr-4 text-neutral-400">
-                <span className="">Edit</span>
-            </Link>
+            
 
         </div>
     );
@@ -46,9 +46,21 @@ function ActionView({onClick}: {onClick: () => void}) {
     </div>
 }
 
-export default function EmployeeView({ employee, onDelete }: EmployeeViewProps & {onDelete: VoidFunction}) {
-    return <ItemDragable action={<ActionView onClick={onDelete} />}>
-        <InnerEmployeeView employee={employee} />
-    </ItemDragable>
+export default function EmployeeView({ employee, onDelete }: EmployeeViewProps & { onDelete: VoidFunction }) {
+    const navigate = useNavigate();
+
+        const goEdit = () => {
+        console.log("goEdit");
+        navigate(`/employee/${employee.id}`);
+    }
+
+    return (
+        <div className="w-100 relative">
+            <ItemDragable action={<ActionView onClick={onDelete} />}>
+                <InnerEmployeeView employee={employee} />
+            </ItemDragable>
+
+            <button style={{color: "red"}} className="absolute right-4 top-3 z-50 text-sm" onClick={goEdit}>Edit</button>
+        </div>)
 }
 

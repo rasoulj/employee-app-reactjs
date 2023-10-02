@@ -42,7 +42,7 @@ function ItemDragable({ children, action }) {
     }
 
     const handleDrag = (e, data) => {
-        e.preventDefault();
+        // e.preventDefault();
         const w = itemRef.current.offsetWidth
         const x = data.x < 0 ? data.x * -1 : data.x
         const p = x / w * 100
